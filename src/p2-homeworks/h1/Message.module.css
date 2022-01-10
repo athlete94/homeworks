@@ -1,0 +1,73 @@
+.message_block {
+    position: relative;
+}
+
+
+
+.message {
+    width: 200px;
+    background-color: rgb(37, 37, 37);
+    padding: 10px;
+    border-radius: 5px 5px 5px 0px;
+    display: inline-block;
+    margin-left: 80px;
+}
+
+
+.avatar::before{
+    background-color: greenyellow;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 30px;
+    z-index: 1;
+   
+}
+
+
+.avatar img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+    position: absolute;
+    bottom: -1px;
+    left: 15px;
+    z-index: 2;
+}
+
+.name {
+    color: rgb(114, 16, 184);
+}
+
+
+
+.text {
+    float: left;
+    color: honeydew;
+    width: 150px;
+    padding: 2px;
+    word-wrap: break-word;
+    
+}
+
+.time {
+    color: green;
+    position: absolute;
+    bottom: 5px;
+    left: 250px;
+} 
+
+.time::after {
+    content: ''; 
+    position: absolute;
+    right: 208px; 
+    bottom: -5px;
+    border: 10px solid transparent;
+    border-right: 10px solid rgb(37, 37, 37);
+    border-bottom: 10px solid rgb(37, 37, 37);
+}
