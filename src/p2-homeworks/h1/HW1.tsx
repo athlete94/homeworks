@@ -1,16 +1,19 @@
-import React from 'react'
+import React, {ChangeEvent} from 'react'
 import Message from './Message'
+import s from './Message.module.css'
 
-const messageData = {
-    avatar: 'https://sun9-74.userapi.com/Ph-WiuOtF985il9AvN9JqiCWedmHtSGSSTXrSA/ltEB2Z2-YO4.jpg',
-    name: 'Some Name',
-    message: 'some text',
-    time: '22:00',
-}
 
-function HW1() {
+
+const HW1 = () => {
+    const messageData = {
+        avatar: 'https://sun9-74.userapi.com/Ph-WiuOtF985il9AvN9JqiCWedmHtSGSSTXrSA/ltEB2Z2-YO4.jpg',
+        name: 'Some Name',
+        message: "some text",
+        time: '22:00',
+    }
+
     return (
-        <div>
+        <div className={s.HW1}>
             <hr/>
             homeworks 1
 
@@ -24,7 +27,6 @@ function HW1() {
 
 
             {/*для личного творчества, могу проверить*/}
-            {/*<AlternativeMessage/>*/}
 
         </div>
     )

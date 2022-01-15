@@ -1,3 +1,8 @@
+.HW1 {
+    background-color: greenyellow;
+    padding: 7px;
+}
+
 .messageBlock {
     position: relative;
 }
@@ -70,4 +75,22 @@
     border: 10px solid transparent;
     border-right: 10px solid rgb(37, 37, 37);
     border-bottom: 10px solid rgb(37, 37, 37);
+}
+
+
+/*------------------------ unput ----------------*/
+
+.input {
+    margin: 10px 67px;
+}
+
+
+.input button {
+    margin-left: 13px;
+    background-color: darkslategrey;
+    padding: 1px 7px;
+    border-radius: 5px;
+    color: #b0c1c1;
+    position: relative;
+    bottom: 7px;
 }
