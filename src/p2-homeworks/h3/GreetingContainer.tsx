@@ -1,28 +1,48 @@
-import React, {useState} from 'react'
+import React, {useState, ChangeEvent, KeyboardEvent} from 'react'
 import Greeting from './Greeting'
+import {UserType} from "./HW3";
+
 
 type GreetingContainerPropsType = {
-    users: any // need to fix any
-    addUserCallback: any // need to fix any
+    users: Array<UserType>
+    addUserCallback: (name: string) => void
 }
 
-// более простой и понятный для новичков
-// function GreetingContainer(props: GreetingPropsType) {
-
-// более современный и удобный для про :)
 // уровень локальной логики
-const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUserCallback}) => { // деструктуризация пропсов
-    const [name, setName] = useState<any>('') // need to fix any
-    const [error, setError] = useState<any>('') // need to fix any
+const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUserCallback}) => {
+    const [name, setName] = useState<string>('')
+    const [error, setError] = useState<string>('')
 
-    const setNameCallback = (e: any) => { // need to fix any
-        setName('') // need to fix
+    let totalUsers = users.length
+    let space = /\s/ // пробелы
+
+
+    const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => {
+        if(!space.test(e.currentTarget.value)) {
+            setName(e.currentTarget.value)
+            setError('')
+        }
     }
     const addUser = () => {
-        alert(`Hello  !`) // need to fix
+        addUserCallback(name)
+        alert(`Hello ${name}!`)
+        setName('')
+    }
+    const onBlurHandler = () => {
+       if(name === '') {
+           setError('Enter name')
+       }
+    }
+    const onKeyPressHandler = (e: KeyboardEvent<HTMLInputElement>) => {
+        if(e.charCode === 13) {
+            addUser()
+        }
+    }
+    const onFocusHandler = () => {
+        setError('')
     }
 
-    const totalUsers = 0 // need to fix
+
 
     return (
         <Greeting
@@ -31,6 +51,9 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
             addUser={addUser}
             error={error}
             totalUsers={totalUsers}
+            onBlurHandler={onBlurHandler}
+            onKeyPressHandler={onKeyPressHandler}
+            onFocusHandler={onFocusHandler}
         />
     )
 }

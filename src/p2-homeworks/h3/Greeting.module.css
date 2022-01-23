@@ -1,7 +1,22 @@
-.someClass {
 
+.inputName {
+    margin-right: 10px;
+    border-radius: 3px;
+    border: 1px solid #8849d7;
+}
+
+.errorInputName {
+    border: 1px solid darkred;
+    margin-right: 10px;
+    border-radius: 3px;
 }
 
 .error {
-    border: 1px solid red;
+    color: darkred;
+}
+
+.HW3 button {
+    margin-right: 5px;
+    background-color: #705fa0;
+    border-radius: 5px;
 }
