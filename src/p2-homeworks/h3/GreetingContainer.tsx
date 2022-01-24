@@ -14,34 +14,30 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
     const [error, setError] = useState<string>('')
 
     let totalUsers = users.length
-    let space = /\s/ // пробелы
-
 
     const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => {
-        if(!space.test(e.currentTarget.value)) {
-            setName(e.currentTarget.value)
-            setError('')
-        }
+        setName(e.currentTarget.value.trimStart())
+        setError('')
     }
+
     const addUser = () => {
         addUserCallback(name)
         alert(`Hello ${name}!`)
         setName('')
     }
     const onBlurHandler = () => {
-       if(name === '') {
-           setError('Enter name')
-       }
+        if (name === '') {
+            setError('Enter name')
+        }
     }
     const onKeyPressHandler = (e: KeyboardEvent<HTMLInputElement>) => {
-        if(e.charCode === 13) {
+        if (e.charCode === 13 && name !== '') {
             addUser()
         }
     }
     const onFocusHandler = () => {
         setError('')
     }
-
 
 
     return (
