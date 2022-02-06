@@ -1,10 +1,14 @@
 import React from 'react'
+import {NavLink} from 'react-router-dom'
+import {PATH} from "./Rts";
+import s from './h5.module.css'
 
-function Header() {
+const Header = () => {
     return (
-        <div>
-            // add NavLinks
-
+        <div className={s.navbar}>
+            <NavLink className={navData => navData.isActive ? s.active : s.item} to={PATH.PRE_JUNIOR}>Pre-junior</NavLink>
+            <NavLink className={navData => navData.isActive ? s.active : s.item} to={PATH.JUNIOR}>Junior</NavLink>
+            <NavLink className={navData => navData.isActive ? s.active : s.item} to={PATH.JUNIOR_PLUS}>Junior +</NavLink>
         </div>
     )
 }

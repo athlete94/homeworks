@@ -1,0 +1,27 @@
+.navbar {
+    margin-bottom: 20px;
+    border-bottom: 2px solid #7210b8;
+    margin-top: 5px;
+    font-size: 18px;
+    padding-bottom: 15px;
+}
+.item {
+    text-decoration: none;
+    margin-right: 10px;
+    font-weight: lighter;
+}
+.active {
+    text-decoration: none;
+    margin-right: 10px;
+    color: green;
+}
+
+.item:active {
+    color:#7210b8;
+}
+
+.notFound {
+    text-align: center;
+    margin-top: 200px;
+    font-size: 20px;
+}

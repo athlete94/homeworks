@@ -14,7 +14,6 @@ const HW1 = () => {
 
     return (
         <div className={s.HW1}>
-            <hr/>
             homeworks 1
 
             {/*should work (должно работать)*/}
