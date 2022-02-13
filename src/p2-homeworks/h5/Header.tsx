@@ -5,11 +5,11 @@ import s from './h5.module.css'
 
 const Header = () => {
     return (
-        <div className={s.navbar}>
+        <nav className={s.navbar}>
             <NavLink className={navData => navData.isActive ? s.active : s.item} to={PATH.PRE_JUNIOR}>Pre-junior</NavLink>
             <NavLink className={navData => navData.isActive ? s.active : s.item} to={PATH.JUNIOR}>Junior</NavLink>
             <NavLink className={navData => navData.isActive ? s.active : s.item} to={PATH.JUNIOR_PLUS}>Junior +</NavLink>
-        </div>
+        </nav>
     )
 }
 
