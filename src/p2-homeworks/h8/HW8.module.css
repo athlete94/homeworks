@@ -1,0 +1,8 @@
+
+.people {
+    display: flex;
+    width: 150px;
+    justify-content: space-between;
+    margin-left: 5px;
+}
+
