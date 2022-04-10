@@ -15,6 +15,7 @@ function HW11() {
         <div>
             <hr/>
             homeworks 11
+            еще не сделал
 
             {/*should work (должно работать)*/}
             <div>

@@ -1,7 +1,8 @@
 import React from "react";
+import {HW13} from "../../HW13/HW13";
 
 export const JuniorPlus = () => {
     return <div>
-        Its projects of Junior +
+        <HW13 />
     </div>
 }
