@@ -15,7 +15,7 @@ function HW10() {
         dispatch(loadingAC(true))
         setTimeout(() => {
             dispatch(loadingAC(false))
-        }, 3000)
+        }, 4000)
 
     };
 

@@ -14,6 +14,14 @@
     color: aqua;
 }
 
+.blue {
+    background: cornflowerblue;
+}
+
+.blue-text {
+    color: #d7d070;
+}
+
 .some {
     background: lightgreen;
 }

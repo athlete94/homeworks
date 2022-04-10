@@ -1,9 +1,9 @@
-.HW10 {
-    margin-bottom: 200px;
+.loading {
+    width: 80px;
+    height: 80px;
 }
 
-.loading {
-    width: 100px;
-    height: 100px;
+.loading iframe {
+    border-radius: 50%;
 }
 
