@@ -3,36 +3,42 @@ import SuperRange from './common/c7-SuperRange/SuperRange'
 import SuperDoubleRange from './common/c8-SuperDoubleRange/SuperDoubleRange'
 
 function HW11() {
-    const [value1, setValue1] = useState(0)
-    const [value2, setValue2] = useState(100)
-    const [value, setValue] = React.useState<number[]>([0, 37]);
+    const [value, setValue] = React.useState<number[]>([0, 100]);
 
-    const onChangeRange = (e: number) => {
-        setValue1(e)
-    }
+
+    const onChangeRange = (
+        event: Event,
+        newValue: number | number[],
+    ) => {
+        if (!Array.isArray(newValue)) {
+            setValue(prevState => [newValue, prevState[1]])
+        } else {
+            setValue(newValue)
+        }
+    };
+
 
     return (
         <div>
             <hr/>
             homeworks 11
-            еще не сделал
 
             {/*should work (должно работать)*/}
             <div>
-                <span>{value1}</span>
-                <SuperRange value1={value1}
-                            onChangeRange={onChangeRange}
+                <span>{value[0]}</span>
+                <SuperRange value1={value[0]}
+                            handleChange={onChangeRange}
                     // сделать так чтоб value1 изменялось
                 />
             </div>
 
             <div>
-                <span>{value1}</span>
+                <span>{value[0]}</span>
                 <SuperDoubleRange
+                    onChangeRange={onChangeRange}
                     value={value}
-                    setValue={setValue}
                 />
-                <span>{value2}</span>
+                <span>{value[1]}</span>
             </div>
 
             <hr/>

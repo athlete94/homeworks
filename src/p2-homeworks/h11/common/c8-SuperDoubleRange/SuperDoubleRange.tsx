@@ -3,40 +3,39 @@
 import * as React from 'react';
 import Slider from '@mui/material/Slider';
 import {Box} from "@mui/material";
-function valuetext(value: number) {
-    return `${value}°C`;
-}
+
 
 type SuperDoubleRangePropsType = {
-    onChangeRange1?: (value: [number, number]) => void
+    onChangeRange?: (event: Event,
+                     newValue: number | number[],
+    ) => void
     value?: number[]
-    setValue: (newValue: number[]) => void
     // min, max, step, disable, ...
 }
 //
 const SuperDoubleRange: React.FC<SuperDoubleRangePropsType> = (
     {
-        onChangeRange1, value,
-        setValue
+        onChangeRange, value,
 
         // min, max, step, disable, ...
     }
 ) => {
 
 
-    const handleChange = (event: Event, newValue: number | number[]) => {
-        setValue(newValue as number[]);
-        console.log(newValue)
-    };
 
     return (
         <Box sx={{ width: 200 }}>
+            {/*<Slider*/}
+            {/*    value={value}*/}
+            {/*    onChange={onChangeRange}*/}
+            {/*    valueLabelDisplay="auto"*/}
+            {/*/>*/}
+
             <Slider
-                getAriaLabel={() => 'Temperature range'}
                 value={value}
-                onChange={handleChange}
+                onChange={onChangeRange}
                 valueLabelDisplay="auto"
-                getAriaValueText={valuetext}
+                disableSwap
             />
         </Box>
     );
