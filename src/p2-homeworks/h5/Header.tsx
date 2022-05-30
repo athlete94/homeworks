@@ -9,6 +9,12 @@ const Header = () => {
             <NavLink className={navData => navData.isActive ? s.active : s.item} to={PATH.PRE_JUNIOR}>Pre-junior</NavLink>
             <NavLink className={navData => navData.isActive ? s.active : s.item} to={PATH.JUNIOR}>Junior</NavLink>
             <NavLink className={navData => navData.isActive ? s.active : s.item} to={PATH.JUNIOR_PLUS}>Junior +</NavLink>
+
+            <div className={s.block}>
+                <div className={s.menu}></div>
+                <div className={s.menu}></div>
+                <div className={s.menu}></div>
+            </div>
         </nav>
     )
 }
