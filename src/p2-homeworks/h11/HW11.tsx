@@ -33,12 +33,12 @@ function HW11() {
             </div>
 
             <div>
-                <span>{value[0]}</span>
+                <span style={{marginRight: "180px"}}>{value[0]}</span>
+                <span>{value[1]}</span>
                 <SuperDoubleRange
                     onChangeRange={onChangeRange}
                     value={value}
                 />
-                <span>{value[1]}</span>
             </div>
 
             <hr/>
